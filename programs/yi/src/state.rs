@@ -31,6 +31,9 @@ pub struct YiToken {
 }
 
 impl YiToken {
+    /// YiToken space because anchor 0.23.0 must provide space with init
+    pub const LEN: usize = 8 + 32 + 1 + (1 * 7) + 32 + 32 + 4 + 4;
+
     /// Calculates the number of [YiToken::underlying_token_mint] tokens to mint for the given amount of [YiToken]s.
     pub fn calculate_underlying_for_yitokens(
         &self,
